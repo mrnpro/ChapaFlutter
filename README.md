@@ -41,7 +41,32 @@ String? paymentUrl = await Chapa.getInstance.startPayment({
   txRef: 'YOUR_TRANSACTION_REFERENCE',
 });
 ```
-Note: You can customize the payment options based on your requirements.
+  ### 3.3: 
+  ```dart
+     String? paymentUrl = await Chapa.getInstance.startPayment(
+        context: context,
+        enableInAppPayment: false,
+        onInAppPaymentSuccess: (successMsg) {
+          // Handle success events
+        },
+        onInAppPaymentError: (errorMsg) {
+          // Handle error
+        },
+        amount: '1000',
+        currency: 'ETB',
+        txRef: 'YOUR_TRANSACTION_REFERENCE',
+      );
+  ```
+  In this example, the startPayment method is called with the necessary parameters:
+
+`context`: The BuildContext used for navigation (required if enableInAppPayment is true).
+`enableInAppPayment`: Determines whether to use in-app payment or not. Set it to false to get the payment URL directly.
+`onInAppPaymentSuccess`: A callback function invoked when in-app payment is successful.
+`onInAppPaymentError`: A callback function invoked when there is an error during in-app payment.
+`amount`: The payment amount.
+`currency`: The currency of the payment.
+`txRef`: The transaction reference.
+   ### `Note`: You can customize the payment options based on your requirements.
 
 4. To verify the payment status, use the verifyPayment method:
 
@@ -50,6 +75,38 @@ Map<String, dynamic> verificationResult = await Chapa.getInstance.verifyPayment(
   txRef: 'YOUR_TRANSACTION_REFERENCE',
 });
 ```
+## Transaction Reference Generator
+The `TxRefRandomGenerator` class is used for generating transaction references for testing purposes. Please note that this class should NOT be used in a production environment.
+### Example
+```dart
+void main()async {
+  // Generate a random transaction reference with a custom prefix
+  String txRef = TxRefRandomGenerator.generate(prefix: 'Pharmabet');
+  
+  // Access the generated transaction reference
+  String storedTxRef = TxRefRandomGenerator.gettxRef;
+  
+  // Print the generated transaction reference and the stored transaction reference
+  print('Generated TxRef: $txRef');
+  print('Stored TxRef: $storedTxRef');
+  await Chapa.getInstance.startPayment(
+        context: context,
+        onInAppPaymentSuccess: (successMsg) {
+          // Handle success events
+        },
+        onInAppPaymentError: (errorMsg) {
+          // Handle error
+        },
+        amount: '1000',
+        currency: 'ETB',
+        txRef: storedTxRef,
+      );
+}
+```
+This example shows how to generate a random transaction reference with a custom prefix,   access the generated transaction reference using the gettxRef getter, and shows how you can use it in a start payment.
+
+`Please note that the TxRefRandomGenerator class is intended for testing purposes only and should not be used in a production environment.`
+
 ## Exceptions
 The chapa_unofficial package provides several exceptions that can be thrown during the payment process. These exceptions allow you to handle specific error scenarios and provide meaningful feedback to your users. Here are the exceptions available:
 
@@ -85,7 +142,7 @@ The chapa_unofficial package provides several exceptions that can be thrown duri
 }
 ```
  Example 2 : exceptions may occure during `verifyPayment`  
- 
+
 ```dart
  try {
   //   verification code here 
@@ -103,3 +160,4 @@ The chapa_unofficial package provides several exceptions that can be thrown duri
   }
 }
 ```
+
