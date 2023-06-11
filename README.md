@@ -8,7 +8,8 @@ Add the following line to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-#   chapa_unofficial: <version>
+   chapa_unofficial:
+      git: https://github.com/mrnpro/ChapaFlutter.git
 ```
 
 ## Usage
@@ -18,6 +19,7 @@ To use the `chapa_unofficial` package, follow these steps:
 1. Import the package in your Dart file:
 
 ```dart
+ 
 import 'package:chapa_unofficial/chapa_unofficial.dart';
 ```
 
@@ -26,22 +28,36 @@ import 'package:chapa_unofficial/chapa_unofficial.dart';
 ```dart
 Chapa.configure(privateKey: 'YOUR_PRIVATE_KEY');
 ```
+ `the best place to configure chapa is inside main method` as an example shown below:
+```dart
+
+void main() {
+  runApp(const MyApp());
+
+  // setup chapa 
+  Chapa.configure(privateKey: "CHASECK_TEST-HlZh7Xo8vNvT2jm6j08OzcnFnB63Yauf");
+}
+
+```
 3. Initialize a payment using the startPayment method:
 ```dart 
-String? paymentUrl = await Chapa.getInstance.startPayment({
+ Future<void> pay() async{
+   String? paymentUrl = await Chapa.getInstance.startPayment({
     context:context,
     onInAppPaymentSuccess:(successMsg){
         // handle success events
-    },
-    onInAppPaymentError:(errorMsg){
-        //handle error
-    },
-  amount: '1000',
-  currency: 'ETB',
-  txRef: 'YOUR_TRANSACTION_REFERENCE',
-});
+      },
+      onInAppPaymentError:(errorMsg){
+          //handle error
+      },
+      amount: '1000',
+      currency: 'ETB',
+      txRef: 'YOUR_TRANSACTION_REFERENCE',
+    });
+
+ }
 ```
-  ### 3.3: 
+   3.3: 
   ```dart
      String? paymentUrl = await Chapa.getInstance.startPayment(
         context: context,
@@ -60,26 +76,36 @@ String? paymentUrl = await Chapa.getInstance.startPayment({
   In this example, the startPayment method is called with the necessary parameters:
 
 `context`: The BuildContext used for navigation (required if enableInAppPayment is true).
+
 `enableInAppPayment`: Determines whether to use in-app payment or not. Set it to false to get the payment URL directly.
+
 `onInAppPaymentSuccess`: A callback function invoked when in-app payment is successful.
+
 `onInAppPaymentError`: A callback function invoked when there is an error during in-app payment.
+
 `amount`: The payment amount.
+
 `currency`: The currency of the payment.
+
 `txRef`: The transaction reference.
    ### `Note`: You can customize the payment options based on your requirements.
 
 4. To verify the payment status, use the verifyPayment method:
 
 ```dart
+ Future<void> verify()async {
 Map<String, dynamic> verificationResult = await Chapa.getInstance.verifyPayment({
   txRef: 'YOUR_TRANSACTION_REFERENCE',
 });
+
+ }
 ```
 ## Transaction Reference Generator
 The `TxRefRandomGenerator` class is used for generating transaction references for testing purposes. Please note that this class should NOT be used in a production environment.
 ### Example
+
 ```dart
-void main()async {
+Future<void> pay() async{
   // Generate a random transaction reference with a custom prefix
   String txRef = TxRefRandomGenerator.generate(prefix: 'Pharmabet');
   
@@ -103,6 +129,7 @@ void main()async {
       );
 }
 ```
+
 This example shows how to generate a random transaction reference with a custom prefix,   access the generated transaction reference using the gettxRef getter, and shows how you can use it in a start payment.
 
 `Please note that the TxRefRandomGenerator class is intended for testing purposes only and should not be used in a production environment.`
