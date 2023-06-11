@@ -1,0 +1,26 @@
+{
+    "message": "Payment details",
+    "status": "success",
+    "data": {
+        "first_name": "Bilen",
+        "last_name": "Gizachew",
+        "email": "abebech_bekele@gmail.com",
+        "currency": "ETB",
+        "amount": 100,
+        "charge": 3.5,
+        "mode": "test",
+        "method": "test",
+        "type": "API",
+        "status": "success",
+        "reference": "6jnheVKQEmy",
+        "tx_ref": "chewatatest-6669",
+        "customization": {
+            "title": "Payment for my favourite merchant",
+            "description": "I love online payments",
+            "logo": null
+        },
+        "meta": null,
+        "created_at": "2023-02-02T07:05:23.000000Z",
+        "updated_at": "2023-02-02T07:05:23.000000Z"
+    }
+}
