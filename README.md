@@ -2,6 +2,12 @@
 
 The `chapa_unofficial` package is a Flutter library that provides integration with the Chapa payment gateway. It offers a convenient way to initialize payments and verify payment status within Flutter applications.
 
+## Features
+  + Initialize payment process
+  + Verify payment status
+  + In-app payment integration (WebView)
+
+
 ## Installation
 
 Add the following line to your `pubspec.yaml` file:
@@ -38,7 +44,10 @@ void main() {
   Chapa.configure(privateKey: "CHASECK_TEST-HlZh7Xo8vNvT2jm6j08OzcnFnB63Yauf");
 }
 
+
 ```
+ + `Note`: The Chapa class follows the Singleton pattern, which ensures that only a single instance of Chapa is created and used throughout your application. You can access the Chapa instance using the Chapa.getInstance getter.
+ 
 3. Initialize a payment using the startPayment method:
 ```dart 
  Future<void> pay() async{
@@ -57,7 +66,7 @@ void main() {
 
  }
 ```
-   3.3: 
+   3.1: 
   ```dart
      String? paymentUrl = await Chapa.getInstance.startPayment(
         context: context,
