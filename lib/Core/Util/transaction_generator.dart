@@ -19,9 +19,9 @@ class TxRefRandomGenerator {
   ///
   /// This method generates a random transaction reference by appending a random number to the prefix "Pharmabet-".
   /// The generated transaction reference is stored in the [txRef] variable and also returned.
-  static String generate() {
+  static String generate({String? prefix}) {
     final random = Random();
-    _txRef = 'Pharmabet-${random.nextInt(200)}';
+    _txRef = '${prefix ?? "test"}-${random.nextInt(200)}';
     return _txRef;
   }
 }
