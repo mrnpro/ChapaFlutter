@@ -51,7 +51,7 @@ void main() {
 3. Initialize a payment using the startPayment method:
 ```dart 
  Future<void> pay() async{
-   String? paymentUrl = await Chapa.getInstance.startPayment({
+   String? paymentUrl = await Chapa.getInstance.startPayment(
     context:context,
     onInAppPaymentSuccess:(successMsg){
         // handle success events
@@ -62,7 +62,7 @@ void main() {
       amount: '1000',
       currency: 'ETB',
       txRef: 'YOUR_TRANSACTION_REFERENCE',
-    });
+    );
 
  }
 ```
@@ -103,9 +103,9 @@ void main() {
 
 ```dart
  Future<void> verify()async {
-Map<String, dynamic> verificationResult = await Chapa.getInstance.verifyPayment({
+Map<String, dynamic> verificationResult = await Chapa.getInstance.verifyPayment(
   txRef: 'YOUR_TRANSACTION_REFERENCE',
-});
+);
 
  }
 ```
