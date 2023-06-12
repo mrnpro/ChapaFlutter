@@ -83,20 +83,40 @@ void main() {
       );
   ```
   In this example, the startPayment method is called with the necessary parameters:
+  #### + Required Arguments
 
-`context`: The BuildContext used for navigation (required if enableInAppPayment is true).
++ `amount (String)`: The amount of the payment.
 
-`enableInAppPayment`: Determines whether to use in-app payment or not. Set it to false to get the payment URL directly.
++ `currency (String)`: The currency of the payment.
 
-`onInAppPaymentSuccess`: A callback function invoked when in-app payment is successful.
++ `txRef (String)`: The transaction reference for the payment.
 
-`onInAppPaymentError`: A callback function invoked when there is an error during in-app payment.
+  ### + Optional Arguments
+  
+  + `context (BuildContext)`: The BuildContext used for navigation. (Required if enableInAppPayment is set to true).
+  
++ `enableInAppPayment (bool):` Flag to determine whether to use in-app payment or not. Default is true. If set to true, you are required to pass your context.
 
-`amount`: The payment amount.
++ `onInAppPaymentSuccess (Function)`: Callback function invoked when in-app payment is successful. Receives a success message as a parameter.
 
-`currency`: The currency of the payment.
++ `onInAppPaymentError (Function)`: Callback function invoked when there is an error during in-app payment. Receives an error message as a parameter.
 
-`txRef`: The transaction reference.
++ `email (String)`: The email address associated with the payment.
+
++ `firstName (String)`: The first name of the payer.
+
++ `lastName (String)`: The last name of the payer.
+
++ `title (String)`: The title or name of the payment.
+
++ `description (String)`: Additional description or details about the payment.
+
++ `phoneNumber (String)`: The phone number associated with the payment.
+
++ `callbackUrl (String)`: The callback URL for handling payment callbacks or notifications.
+
++ `returnUrl (String)`: The return URL for redirecting after payment completion.
+
    ### `Note`: You can customize the payment options based on your requirements.
 
 4. To verify the payment status, use the verifyPayment method:
