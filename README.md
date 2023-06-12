@@ -216,4 +216,7 @@ The chapa_unofficial package provides several exceptions that can be thrown duri
   }
 }
 ```
-
+## Documentation
+For more details on how to use the Chapa, check out the API documentation. [API Documentation](https://developer.chapa.co/docs/)
+## Contributing
+Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
