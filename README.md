@@ -85,37 +85,37 @@ void main() {
   In this example, the startPayment method is called with the necessary parameters:
   #### + Required Arguments
 
-+ `amount (String)`: The amount of the payment.
+   + `amount (String)`: The amount of the payment.
 
-+ `currency (String)`: The currency of the payment.
+   + `currency (String)`: The currency of the payment.
 
-+ `txRef (String)`: The transaction reference for the payment.
+   + `txRef (String)`: The transaction reference for the payment.
 
   ### + Optional Arguments
   
-  + `context (BuildContext)`: The BuildContext used for navigation. (Required if enableInAppPayment is set to true).
+   + `context (BuildContext)`: The BuildContext used for navigation. (Required if enableInAppPayment is set to true).
   
-+ `enableInAppPayment (bool):` Flag to determine whether to use in-app payment or not. Default is true. If set to true, you are required to pass your context.
+   + `enableInAppPayment (bool):` Flag to determine whether to use in-app payment or not. Default is true. If set to true, you are required to pass your context.
 
-+ `onInAppPaymentSuccess (Function)`: Callback function invoked when in-app payment is successful. Receives a success message as a parameter.
+   + `onInAppPaymentSuccess (Function)`: Callback function invoked when in-app payment is successful. Receives a success message as a parameter.
 
-+ `onInAppPaymentError (Function)`: Callback function invoked when there is an error during in-app payment. Receives an error message as a parameter.
+   + `onInAppPaymentError (Function)`: Callback function invoked when there is an error during in-app payment. Receives an error message as a parameter.
 
-+ `email (String)`: The email address associated with the payment.
+   + `email (String)`: The email address associated with the payment.
 
-+ `firstName (String)`: The first name of the payer.
+   + `firstName (String)`: The first name of the payer.
 
-+ `lastName (String)`: The last name of the payer.
+   + `lastName (String)`: The last name of the payer.
 
-+ `title (String)`: The title or name of the payment.
+   + `title (String)`: The title or name of the payment.
 
-+ `description (String)`: Additional description or details about the payment.
+   + `description (String)`: Additional description or details about the payment.
 
-+ `phoneNumber (String)`: The phone number associated with the payment.
+   + `phoneNumber (String)`: The phone number associated with the payment.
 
-+ `callbackUrl (String)`: The callback URL for handling payment callbacks or notifications.
+   + `callbackUrl (String)`: The callback URL for handling payment callbacks or notifications.
 
-+ `returnUrl (String)`: The return URL for redirecting after payment completion.
+   + `returnUrl (String)`: The return URL for redirecting after payment completion.
 
    ### `Note`: You can customize the payment options based on your requirements.
 
