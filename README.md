@@ -161,7 +161,11 @@ Future<void> pay() async{
 
 This example shows how to generate a random transaction reference with a custom prefix,   access the generated transaction reference using the gettxRef getter, and shows how you can use it in a start payment.
 
-`Please note that the TxRefRandomGenerator class is intended for testing purposes only and should not be used in a production environment.`
+`Please note that the TxRefRandomGenerator class is intended for testing purposes only and should not be used in a production environment. Here's why:`
+
+1. `Duplicate Transaction References`: The TxRefRandomGenerator generates transaction references based on a random number appended to a prefix. In a testing environment, this approach may be acceptable. However, in a production environment, relying solely on random numbers can lead to the generation of duplicate transaction references. When a transaction reference is repeated, the Chapa server may reject it as a duplicate transaction, resulting in errors and potential payment inconsistencies.
+
+2. `Data Integrity and Tracking`: Transaction references play a crucial role in ensuring data integrity and tracking payments. In a production environment, it's essential to have unique and meaningful transaction references that can be easily tracked and associated with specific transactions. Randomly generated references may lack the necessary context and structure needed for effective payment tracking and reconciliation.
 
 ## Exceptions
 The chapa_unofficial package provides several exceptions that can be thrown during the payment process. These exceptions allow you to handle specific error scenarios and provide meaningful feedback to your users. Here are the exceptions available:
@@ -218,5 +222,6 @@ The chapa_unofficial package provides several exceptions that can be thrown duri
 ```
 ## Documentation
 For more details on how to use the Chapa, check out the API documentation. [API Documentation](https://developer.chapa.co/docs/)
+
 ## Contributing
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
