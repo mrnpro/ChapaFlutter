@@ -69,14 +69,7 @@ void main() {
    3.1: 
   ```dart
      String? paymentUrl = await Chapa.getInstance.startPayment(
-        context: context,
         enableInAppPayment: false,
-        onInAppPaymentSuccess: (successMsg) {
-          // Handle success events
-        },
-        onInAppPaymentError: (errorMsg) {
-          // Handle error
-        },
         amount: '1000',
         currency: 'ETB',
         txRef: 'YOUR_TRANSACTION_REFERENCE',
