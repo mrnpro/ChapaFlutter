@@ -1,4 +1,4 @@
-import 'package:chapa_unofficial/Data/Model/chapa_initializer_model.dart';
+import 'package:chapa_unofficial/src/Data/Model/chapa_initializer_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

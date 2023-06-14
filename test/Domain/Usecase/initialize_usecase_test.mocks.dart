@@ -5,12 +5,13 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:chapa_unofficial/Core/Exceptions/chapa_exception.dart' as _i4;
-import 'package:chapa_unofficial/Domain/Entities/authorization_entity.dart'
+import 'package:chapa_unofficial/src/Core/Exceptions/chapa_exception.dart'
+    as _i4;
+import 'package:chapa_unofficial/src/Domain/Entities/authorization_entity.dart'
     as _i6;
-import 'package:chapa_unofficial/Domain/Entities/chapa_initializer_entity.dart'
+import 'package:chapa_unofficial/src/Domain/Entities/chapa_initializer_entity.dart'
     as _i5;
-import 'package:chapa_unofficial/Domain/Repository/chapa_repo.dart' as _i2;
+import 'package:chapa_unofficial/src/Domain/Repository/chapa_repo.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint

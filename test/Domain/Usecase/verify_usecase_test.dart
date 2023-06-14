@@ -1,8 +1,7 @@
-import 'package:chapa_unofficial/Core/Exceptions/ServerException/server_exception.dart';
-import 'package:chapa_unofficial/Core/Exceptions/chapa_exception.dart';
-import 'package:chapa_unofficial/Domain/Entities/authorization_entity.dart';
-import 'package:chapa_unofficial/Domain/Repository/chapa_repo.dart';
-import 'package:chapa_unofficial/Domain/Usecase/verify_usecase.dart';
+import 'package:chapa_unofficial/chapa_unofficial.dart';
+import 'package:chapa_unofficial/src/Domain/Entities/authorization_entity.dart';
+import 'package:chapa_unofficial/src/Domain/Repository/chapa_repo.dart';
+import 'package:chapa_unofficial/src/Domain/Usecase/verify_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

@@ -5,7 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:chapa_unofficial/Data/DataSource/RemoteDataSource/chapa_remote_data_source.dart'
+import 'package:chapa_unofficial/src/Data/DataSource/RemoteDataSource/chapa_remote_data_source.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 

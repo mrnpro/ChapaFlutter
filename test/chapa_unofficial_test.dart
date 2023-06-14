@@ -1,11 +1,9 @@
-import 'package:chapa_unofficial/Core/Exceptions/AuthException/auth_exception.dart';
-import 'package:chapa_unofficial/Domain/Usecase/intialize_usecase.dart';
-import 'package:chapa_unofficial/Domain/Usecase/verify_usecase.dart';
+import 'package:chapa_unofficial/chapa_unofficial.dart';
+import 'package:chapa_unofficial/src/Domain/Usecase/intialize_usecase.dart';
+import 'package:chapa_unofficial/src/Domain/Usecase/verify_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-
-import 'package:chapa_unofficial/chapa.dart';
 
 // Mock classes for dependencies
 class MockIntializeUsecase extends Mock implements IntializeUsecase {}

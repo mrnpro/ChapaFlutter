@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:chapa_unofficial/Core/Exceptions/ServerException/server_exception.dart';
-import 'package:chapa_unofficial/Data/DataSource/RemoteDataSource/chapa_remote_data_source.dart';
-import 'package:chapa_unofficial/Data/Model/authorization_model.dart';
-import 'package:chapa_unofficial/Data/Model/chapa_initializer_model.dart';
-import 'package:chapa_unofficial/Data/Repository/chapa_repo_impl.dart';
-import 'package:chapa_unofficial/Domain/Entities/authorization_entity.dart';
-import 'package:chapa_unofficial/Domain/Entities/chapa_initializer_entity.dart';
+import 'package:chapa_unofficial/chapa_unofficial.dart';
+import 'package:chapa_unofficial/src/Data/DataSource/RemoteDataSource/chapa_remote_data_source.dart';
+import 'package:chapa_unofficial/src/Data/Model/authorization_model.dart';
+import 'package:chapa_unofficial/src/Data/Model/chapa_initializer_model.dart';
+import 'package:chapa_unofficial/src/Data/Repository/chapa_repo_impl.dart';
+import 'package:chapa_unofficial/src/Domain/Entities/authorization_entity.dart';
+import 'package:chapa_unofficial/src/Domain/Entities/chapa_initializer_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
