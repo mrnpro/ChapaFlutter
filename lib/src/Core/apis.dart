@@ -2,6 +2,8 @@
 ///
 /// This class contains getter methods that return the API endpoint URLs for initializing and verifying transactions.
 class Apis {
+  Apis._();
+
   /// Returns the Chapa transaction initialization URL.
   ///
   /// This getter returns a string representing the URL for initializing Chapa transactions.

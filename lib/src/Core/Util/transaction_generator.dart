@@ -4,6 +4,8 @@ import 'dart:math';
 ///
 /// WARNING: This class should NOT be used in a production environment.
 class TxRefRandomGenerator {
+  TxRefRandomGenerator._();
+
   /// The generated transaction reference.
   ///
   /// This variable stores the last generated transaction reference.
