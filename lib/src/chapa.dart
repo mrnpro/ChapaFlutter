@@ -153,7 +153,7 @@ class Chapa {
   ///
   /// Throws an exception if there is an error during the verification process.
 
-  Future<JsonType> verifyPayment({required String txRef}) async {
+  FutureJsonType verifyPayment({required String txRef}) async {
     final result = await _verifyUsecase.call(
         txRef: txRef, authorizationEntity: AuthorizationEntity(_privateKey!));
 
