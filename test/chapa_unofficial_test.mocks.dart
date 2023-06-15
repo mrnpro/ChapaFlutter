@@ -10,10 +10,11 @@ import 'package:chapa_unofficial/src/Core/Exceptions/chapa_exception.dart'
 import 'package:chapa_unofficial/src/Domain/Entities/authorization_entity.dart'
     as _i5;
 import 'package:chapa_unofficial/src/Domain/Entities/chapa_initializer_entity.dart'
+    as _i7;
+import 'package:chapa_unofficial/src/Domain/Usecase/intialize_usecase.dart'
     as _i6;
+import 'package:chapa_unofficial/src/Domain/Usecase/verify_usecase.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
-
-import 'chapa_unofficial_test.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -26,10 +27,10 @@ import 'chapa_unofficial_test.dart' as _i2;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-/// A class which mocks [MockVerifyUsecase].
+/// A class which mocks [VerifyUsecase].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockMockVerifyUsecase extends _i1.Mock implements _i2.MockVerifyUsecase {
+class MockVerifyUsecase extends _i1.Mock implements _i2.VerifyUsecase {
   @override
   _i3.Future<(Map<String, dynamic>?, _i4.ChapaException?)> call({
     required String? txRef,
@@ -53,14 +54,13 @@ class MockMockVerifyUsecase extends _i1.Mock implements _i2.MockVerifyUsecase {
       ) as _i3.Future<(Map<String, dynamic>?, _i4.ChapaException?)>);
 }
 
-/// A class which mocks [MockIntializeUsecase].
+/// A class which mocks [IntializeUsecase].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockMockIntializeUsecase extends _i1.Mock
-    implements _i2.MockIntializeUsecase {
+class MockIntializeUsecase extends _i1.Mock implements _i6.IntializeUsecase {
   @override
   _i3.Future<(String?, _i4.ChapaException?)> call({
-    required _i6.ChapaIntializerEntity? chapaIntializer,
+    required _i7.ChapaIntializerEntity? chapaIntializer,
     required _i5.AuthorizationEntity? authorizationEntity,
   }) =>
       (super.noSuchMethod(

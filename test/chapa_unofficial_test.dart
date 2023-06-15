@@ -3,25 +3,20 @@ import 'package:chapa_unofficial/src/Domain/Usecase/intialize_usecase.dart';
 import 'package:chapa_unofficial/src/Domain/Usecase/verify_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
 
-// Mock classes for dependencies
-class MockIntializeUsecase extends Mock implements IntializeUsecase {}
+// import 'chapa_unofficial_test.mocks.dart';
 
-class MockVerifyUsecase extends Mock implements VerifyUsecase {}
-
-@GenerateNiceMocks(
-    [MockSpec<MockVerifyUsecase>(), MockSpec<MockIntializeUsecase>()])
+@GenerateNiceMocks([MockSpec<VerifyUsecase>(), MockSpec<IntializeUsecase>()])
 void main() {
   group('test all possible cases in Chapa logic', () {
     const privateKey = 'test_private_key';
     late Chapa chapa;
-    late MockIntializeUsecase mockIntializeUsecase;
-    late MockVerifyUsecase mockVerifyUsecase;
+    // late MockIntializeUsecase mockIntializeUsecase;
+    // late MockVerifyUsecase mockVerifyUsecase;
 
     setUp(() {
-      mockIntializeUsecase = MockIntializeUsecase();
-      mockVerifyUsecase = MockVerifyUsecase();
+      // mockIntializeUsecase = MockIntializeUsecase();
+      // mockVerifyUsecase = MockVerifyUsecase();
       chapa = Chapa.configure(privateKey: privateKey);
     });
 

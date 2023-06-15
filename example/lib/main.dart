@@ -1,4 +1,5 @@
 import 'package:chapa_unofficial/chapa_unofficial.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -34,14 +35,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final int _counter = 0;
+  // final int _counter = 0;
 
   Future<void> verify() async {
     Map<String, dynamic> verificationResult =
         await Chapa.getInstance.verifyPayment(
       txRef: TxRefRandomGenerator.gettxRef,
     );
-    print(verificationResult);
+    if (kDebugMode) {
+      print(verificationResult);
+    }
   }
 
   Future<void> pay() async {
@@ -53,8 +56,10 @@ class _MyHomePageState extends State<MyHomePage> {
       String storedTxRef = TxRefRandomGenerator.gettxRef;
 
       // Print the generated transaction reference and the stored transaction reference
-      print('Generated TxRef: $txRef');
-      print('Stored TxRef: $storedTxRef');
+      if (kDebugMode) {
+        print('Generated TxRef: $txRef');
+        print('Stored TxRef: $storedTxRef');
+      }
       await Chapa.getInstance.startPayment(
         context: context,
         onInAppPaymentSuccess: (successMsg) {
@@ -68,7 +73,9 @@ class _MyHomePageState extends State<MyHomePage> {
         txRef: storedTxRef,
       );
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 

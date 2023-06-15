@@ -5,8 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:chapa_unofficial/src/Core/Exceptions/chapa_exception.dart'
-    as _i4;
+import 'package:chapa_unofficial/chapa_unofficial.dart' as _i4;
 import 'package:chapa_unofficial/src/Domain/Entities/authorization_entity.dart'
     as _i6;
 import 'package:chapa_unofficial/src/Domain/Entities/chapa_initializer_entity.dart'
