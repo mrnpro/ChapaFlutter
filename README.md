@@ -38,10 +38,9 @@ Chapa.configure(privateKey: 'YOUR_PRIVATE_KEY');
 ```dart
 
 void main() {
-  runApp(const MyApp());
-
   // setup chapa 
   Chapa.configure(privateKey: "CHASECK_TEST-HlZh7Xo8vNvT2jm6j08OzcnFnB63Yauf");
+  runApp(const MyApp());
 }
 
 
