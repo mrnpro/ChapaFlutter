@@ -1,8 +1,7 @@
-import 'dart:math';
+import 'package:uuid/uuid.dart';
 
-/// The `TxRefRandomGenerator` class is used for generating transaction references for testing purposes.
+/// The `TxRefRandomGenerator` class is used for generating transaction reference.
 ///
-/// WARNING: This class should NOT be used in a production environment.
 class TxRefRandomGenerator {
   TxRefRandomGenerator._();
 
@@ -19,11 +18,13 @@ class TxRefRandomGenerator {
 
   /// Generates a random transaction reference.
   ///
-  /// This method generates a random transaction reference by appending a random number to the prefix "Pharmabet-".
+  /// This method generates a random transaction reference by appending a [UUID] to the custom prefix or the default prefix "test-".
   /// The generated transaction reference is stored in the [txRef] variable and also returned.
   static String generate({String? prefix}) {
-    final random = Random();
-    _txRef = '${prefix ?? "test"}-${random.nextInt(200)}';
+    const uuid = Uuid();
+    _txRef = "${prefix ?? "test"}-${uuid.v4(
+      options: {'time': DateTime.now().millisecondsSinceEpoch}
+    )}";
     return _txRef;
   }
 }
