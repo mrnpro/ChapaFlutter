@@ -6,6 +6,7 @@ The `chapa_unofficial` package is a Flutter library that provides integration wi
   + Initialize payment process
   + Verify payment status
   + In-app payment integration (WebView)
+  + Generate transaction reference
 
 
 ## Installation
@@ -56,11 +57,11 @@ void main() {
         // handle success events
       },
       onInAppPaymentError:(errorMsg){
-          //handle error
+        //handle error
       },
       amount: '1000',
       currency: 'ETB',
-      txRef: 'YOUR_TRANSACTION_REFERENCE',
+      txRef: 'GENERATED_TRANSACTION_REFERENCE',
     );
 
  }
@@ -71,7 +72,7 @@ void main() {
         enableInAppPayment: false,
         amount: '1000',
         currency: 'ETB',
-        txRef: 'YOUR_TRANSACTION_REFERENCE',
+        txRef: 'GENERATED_TRANSACTION_REFERENCE',
       );
   ```
   In this example, the startPayment method is called with the necessary parameters:
@@ -116,13 +117,13 @@ void main() {
 ```dart
  Future<void> verify()async {
 Map<String, dynamic> verificationResult = await Chapa.getInstance.verifyPayment(
-  txRef: 'YOUR_TRANSACTION_REFERENCE',
+  txRef: 'GENERATED_TRANSACTION_REFERENCE',
 );
 
  }
 ```
 ## Transaction Reference Generator
-The `TxRefRandomGenerator` class is used for generating transaction references for testing purposes. Please note that this class should NOT be used in a production environment.
+The `TxRefRandomGenerator` class is used for generating transaction references. This class generates random transaction references using UUID so there won't be any problem but it is possible for a coincidence to occur where two UUIDs match, the probability of this happening is extremely low. This is because UUIDs are designed to be unique and generated using a cryptographically secure random number generator, which makes it highly unlikely for two UUIDs to match.
 ### Example
 
 ```dart
@@ -152,12 +153,6 @@ Future<void> pay() async{
 ```
 
 This example shows how to generate a random transaction reference with a custom prefix,   access the generated transaction reference using the gettxRef getter, and shows how you can use it in a start payment.
-
-`Please note that the TxRefRandomGenerator class is intended for testing purposes only and should not be used in a production environment. Here's why:`
-
-1. `Duplicate Transaction References`: The TxRefRandomGenerator generates transaction references based on a random number appended to a prefix. In a testing environment, this approach may be acceptable. However, in a production environment, relying solely on random numbers can lead to the generation of duplicate transaction references. When a transaction reference is repeated, the Chapa server may reject it as a duplicate transaction, resulting in errors and potential payment inconsistencies.
-
-2. `Data Integrity and Tracking`: Transaction references play a crucial role in ensuring data integrity and tracking payments. In a production environment, it's essential to have unique and meaningful transaction references that can be easily tracked and associated with specific transactions. Randomly generated references may lack the necessary context and structure needed for effective payment tracking and reconciliation.
 
 ## Exceptions
 The chapa_unofficial package provides several exceptions that can be thrown during the payment process. These exceptions allow you to handle specific error scenarios and provide meaningful feedback to your users. Here are the exceptions available:

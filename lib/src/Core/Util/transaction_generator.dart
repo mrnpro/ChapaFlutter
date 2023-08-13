@@ -18,13 +18,13 @@ class TxRefRandomGenerator {
 
   /// Generates a random transaction reference.
   ///
-  /// This method generates a random transaction reference by using UUID.
+  /// This method generates a random transaction reference by appending a [UUID] to the custom prefix or the default prefix "test-".
   /// The generated transaction reference is stored in the [txRef] variable and also returned.
-  static String generate() {
+  static String generate({String? prefix}) {
     const uuid = Uuid();
-    _txRef = uuid.v4(
+    _txRef = "${prefix ?? "test"}-${uuid.v4(
       options: {'time': DateTime.now().millisecondsSinceEpoch}
-    );
+    )}";
     return _txRef;
   }
 }
