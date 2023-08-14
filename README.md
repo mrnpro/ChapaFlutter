@@ -165,6 +165,8 @@ The chapa_unofficial package provides several exceptions that can be thrown duri
 
 `ServerException`: Thrown when there is an error on the server-side during the payment process. It contains a message describing the error.
 
+`AmountException`: This exception is thrown when the amount provided exceeds the maximum amount allowed by Chapa, or when an invalid amount is entered. It can be used to handle errors related to maximum amount and invalid amount
+
 `UnknownException`: Thrown when an unknown or unexpected error occurs during the payment process. This exception can be used as a fallback for handling unanticipated errors.
 
 `VerificationException`: Thrown when there is an error during the payment verification process. It contains a message describing the error.
