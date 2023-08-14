@@ -183,6 +183,8 @@ The chapa_unofficial package provides several exceptions that can be thrown duri
     // Handle network error
   } else if (e is ServerException) {
     // Handle server-side error
+  } else if (e is AmountException){
+    // Handle amount error
   } else {
     // Handle unknown error
   }
