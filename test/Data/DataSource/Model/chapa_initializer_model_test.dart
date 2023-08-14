@@ -3,12 +3,12 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   const initializerModel = ChapaIntializerModel(
-    amount: "234",
+    amount: "200000",
     currency: "Ethiopian",
     txRef: "unique Ref",
   );
   final testJson = {
-    "amount": "234",
+    "amount": "200000",
     "currency": "Ethiopian",
     "tx_ref": "unique Ref"
   };

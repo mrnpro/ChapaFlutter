@@ -1,3 +1,5 @@
+import 'package:chapa_unofficial/src/Core/Exceptions/AmountException/amount_exception.dart';
+
 import '../../../../chapa_unofficial.dart';
 // import '../../../Core/Exceptions/InitializationException/initialization_exception.dart';
 import '../../../Core/apis.dart';
@@ -47,7 +49,9 @@ class ChapaRemoteDataSourceImpl extends ChapaRemoteDataSource {
       return response.data;
     } on client.DioException catch (e) {
       _handleException(e, () {
-        throw InitializationException(msg: e.response?.data['message']);
+        throw InitializationException(
+          msg: (e.response?.data['message'] is Map<String, dynamic>) ? null : e.response?.data['message']
+        );
       });
 
       throw UnknownChapaException();
@@ -60,6 +64,14 @@ class ChapaRemoteDataSourceImpl extends ChapaRemoteDataSource {
         e.type == client.DioExceptionType.connectionTimeout) {
       // handle if there is network issue
       throw const NetworkException();
+    } else if (e.response?.data['message']['amount'][0] ==
+        'validation.max.numeric') {
+      // handle if the maximum amount is reached
+      throw const AmountException(msg: 'Maximum amount is 100,000birr');
+    } else if (e.response?.data['message']['amount'][0] == 'validation.numeric') {
+      // handle if the integer entered is inappropriate input
+      throw const AmountException(
+          msg: 'Don\'t pass the amount with numeric format');
     }
 
     switch (e.response?.statusCode) {
