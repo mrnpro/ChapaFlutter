@@ -12,7 +12,7 @@ Future<String> check() async {
   };
 
   const private = {
-    "Authorization": "Bearer CHASECK_TEST-6LtxBq0mWOdlkV9CtubFe9NUhGYPv9bL",
+    "Authorization": "Bearer CHASECK-xxxxxxxxxxxxxxxx",
   };
 
   try {
@@ -50,7 +50,7 @@ Future<String> checkV2() async {
   };
 
   const private = {
-    "Authorization": "Bearer CHASECK_TEST-6LtxBq0mWOdlkV9CtubFe9NUhGYPv9bL",
+    "Authorization": "Bearer CHASECK-xxxxxxxxxxxxxxxx",
   };
 
   try {
