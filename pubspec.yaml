@@ -1,5 +1,5 @@
 name: chapa_unofficial
-description: A new Flutter package project.
+description: Flutter library that provides integration with the Chapa payment gateway.
 version: 0.0.1
 repository: https://github.com/mrnpro/ChapaFlutter
 
