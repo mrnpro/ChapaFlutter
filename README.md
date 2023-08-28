@@ -15,8 +15,8 @@ Add the following line to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-   chapa_unofficial:
-      git: https://github.com/mrnpro/ChapaFlutter.git
+   chapa_unofficial: <NEW VERSION>
+      
 ```
 
 ## Usage
