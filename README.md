@@ -20,7 +20,7 @@ dependencies:
 ```
 ## Device Compatibility
 ```
-While it is not mandatory, we advise minimizing the use of emulators when working with this package. Emulators may introduce unforeseen errors or discrepancies that can affect the package's performance and behavior.
+ While it is not mandatory, we advise minimizing the use of emulators when working with this package.Emulators may introduce unforeseen errors or discrepancies that can affect the package's performance and behavior.
 ```
 ## Usage
 
