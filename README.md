@@ -18,7 +18,10 @@ dependencies:
    chapa_unofficial: ^0.0.2
       
 ```
-
+## Device Compatibility
+```
+While it is not mandatory, we strongly advise minimizing the use of emulators when working with our package. Emulators may introduce unforeseen errors or discrepancies that can affect the package's performance and behavior.
+```
 ## Usage
 
 To use the `chapa_unofficial` package, follow these steps:
@@ -43,7 +46,6 @@ void main() {
   Chapa.configure(privateKey: "CHASECK_TEST-HlZh7Xo8vNvT2jm6j08OzcnFnB63Yauf");
   runApp(const MyApp());
 }
-
 
 ```
  + `Note`: The Chapa class follows the Singleton pattern, which ensures that only a single instance of Chapa is created and used throughout your application. You can access the Chapa instance using the Chapa.getInstance getter.
@@ -84,7 +86,7 @@ void main() {
 
   ### + Optional Arguments
    + `txRef (String)`: The transaction reference for the payment. if not passed, it will generate default txRef with prefix 'test'
-   
+
    + `context (BuildContext)`: The BuildContext used for navigation. (Required if enableInAppPayment is set to true).
   
    + `enableInAppPayment (bool):` Flag to determine whether to use in-app payment or not. Default is true. If set to true, you are required to pass your context.
