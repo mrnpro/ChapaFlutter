@@ -82,10 +82,9 @@ void main() {
 
    + `currency (String)`: The currency of the payment.
 
-   + `txRef (String)`: The transaction reference for the payment.
-
   ### + Optional Arguments
-  
+   + `txRef (String)`: The transaction reference for the payment. if not passed, it will generate default txRef with prefix 'test'
+   
    + `context (BuildContext)`: The BuildContext used for navigation. (Required if enableInAppPayment is set to true).
   
    + `enableInAppPayment (bool):` Flag to determine whether to use in-app payment or not. Default is true. If set to true, you are required to pass your context.
