@@ -86,7 +86,7 @@ class Chapa {
     )? onInAppPaymentError,
     required String amount,
     required String currency,
-    required String txRef,
+    String? txRef,
     String? email,
     String? firstName,
     String? lastName,
@@ -107,7 +107,12 @@ class Chapa {
         chapaIntializer: ChapaIntializerEntity(
             amount: amount,
             currency: currency,
-            txRef: txRef,
+            /**
+       If the user does not provide the transaction reference (txRef), 
+       the package will continue to function by generating a transaction reference with the prefix "test-". 
+       This ensures that even without user input, the program can proceed smoothly.
+       */
+            txRef: txRef ?? TxRefRandomGenerator.generate(),
             callbackUrl: callbackUrl,
             description: description,
             email: email,
