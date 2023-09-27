@@ -15,12 +15,12 @@ Add the following line to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-   chapa_unofficial: ^0.0.2
+   chapa_unofficial: ^0.0.3
       
 ```
 ## Device Compatibility
 ```
-While it is not mandatory, we strongly advise minimizing the use of emulators when working with our package. Emulators may introduce unforeseen errors or discrepancies that can affect the package's performance and behavior.
+While it is not mandatory, we advise minimizing the use of emulators when working with this package. Emulators may introduce unforeseen errors or discrepancies that can affect the package's performance and behavior.
 ```
 ## Usage
 
@@ -74,7 +74,6 @@ void main() {
         enableInAppPayment: false,
         amount: '1000',
         currency: 'ETB',
-        txRef: 'GENERATED_TRANSACTION_REFERENCE',
       );
   ```
   In this example, the startPayment method is called with the necessary parameters:
@@ -209,7 +208,7 @@ The chapa_unofficial package provides several exceptions that can be thrown duri
 }
 ```
 ## Documentation
-For more details on how to use the Chapa, check out the API documentation. [API Documentation](https://developer.chapa.co/docs/)
+For more details on how to use the Chapa, check out the  [API Documentation](https://developer.chapa.co/docs/)
 
 ## Contributing
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
