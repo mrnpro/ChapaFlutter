@@ -23,8 +23,8 @@ class TxRefRandomGenerator {
   static String generate({String? prefix}) {
     const uuid = Uuid();
     _txRef = "${prefix ?? "test"}-${uuid.v4(
-      options: {'time': DateTime.now().millisecondsSinceEpoch}
-    )}";
+        // ignore: deprecated_member_use
+        options: {'time': DateTime.now().millisecondsSinceEpoch})}";
     return _txRef;
   }
 }
