@@ -15,7 +15,7 @@ Add the following line to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-   chapa_unofficial: <NEW VERSION>
+   chapa_unofficial: ^0.0.2
       
 ```
 
