@@ -32,7 +32,14 @@ class Chapa {
   Chapa._internal(this._initilizeUsecase, this._verifyUsecase);
 
   /// Returns the singleton instance of Chapa.
-  static Chapa get getInstance => _instance;
+  static Chapa get getInstance {
+    if (_instance == null) {
+      throw const AuthException(
+          msg:
+              'Please configure the API key before getting chapa instance.Please refer to the documentation: [https://pub.dev/packages/chapa_unofficial]');
+    }
+    return _instance!;
+  }
 
   /// Sets up the Chapa singleton instance and other dependenciy
   /// injections with the provided [privateKey]
@@ -101,7 +108,6 @@ class Chapa {
       throw const AuthException(
           msg:
               'Please configure the API key before starting the payment. Refer to the documentation: [https://pub.dev/packages/chapa_unofficial]');
-   
     }
 
     // intialize on the server
