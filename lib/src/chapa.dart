@@ -98,7 +98,10 @@ class Chapa {
   }) async {
     // validate the private key
     if (_privateKey == null) {
-      throw const AuthException(msg: "please configure  before you initialize");
+      throw const AuthException(
+          msg:
+              'Please configure the API key before starting the payment. Refer to the documentation: [https://pub.dev/packages/chapa_unofficial]');
+   
     }
 
     // intialize on the server
@@ -133,7 +136,7 @@ class Chapa {
       //validate if the build context is passed
       if (context == null) {
         throw Exception(
-            "to use 'InAppPayment' ,you are required to pass context or set 'enableInAppPayment' to false");
+            "To use 'InAppPayment' ,you are required to pass context or set 'enableInAppPayment' to false");
       }
 
       // fire  the WeView here
