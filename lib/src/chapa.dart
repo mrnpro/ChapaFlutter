@@ -32,7 +32,7 @@ class Chapa {
   Chapa._internal(this._initilizeUsecase, this._verifyUsecase);
 
   /// Returns the singleton instance of Chapa.
-  static get getInstance => _instance;
+  static Chapa get getInstance => _instance;
 
   /// Sets up the Chapa singleton instance and other dependenciy
   /// injections with the provided [privateKey]
