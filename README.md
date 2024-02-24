@@ -15,11 +15,9 @@ Add the following line to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-   chapa_unofficial: ^0.0.3
-      
+   chapa_unofficial: ^0.0.3 
 ```
 ## Device Compatibility
- 
  While it is not mandatory, we advise minimizing the use of emulators when working with this package.Emulators may introduce unforeseen errors or discrepancies that can affect the package's performance and behavior.
 
 ## Usage
@@ -116,11 +114,16 @@ void main() {
 
 ```dart
  Future<void> verify()async {
-Map<String, dynamic> verificationResult = await Chapa.getInstance.verifyPayment(
-  txRef: 'GENERATED_TRANSACTION_REFERENCE',
-);
-
- }
+    Map<String, dynamic> verificationResult = await Chapa.getInstance.verifyPayment(
+      txRef: 'GENERATED_TRANSACTION_REFERENCE',
+    );
+  }
+```
+5. Incase you need to reset the configuration , use resetConfiguration method:
+```dart
+Future<void> resetChapa(){
+  Chapa.resetConfiguration();
+}
 ```
 ## Transaction Reference Generator
 The `TxRefRandomGenerator` class is used for generating transaction references. This class generates random transaction references using UUID so there won't be any problem but it is possible for a coincidence to occur where two UUIDs match, the probability of this happening is extremely low. This is because UUIDs are designed to be unique and generated using a cryptographically secure random number generator, which makes it highly unlikely for two UUIDs to match.
@@ -212,3 +215,4 @@ For more details on how to use the Chapa, check out the  [API Documentation](htt
 
 ## Contributing
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
+

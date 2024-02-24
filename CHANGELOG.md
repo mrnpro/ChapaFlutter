@@ -11,3 +11,5 @@
 ## 0.0.3
 
 * Continued functionality without user input: If the user does not provide a transaction reference (txReference), the package now seamlessly generates a unique reference code with the prefix "test-". This ensures that the program can continue to function smoothly, even in cases where user input is absent.
+### 0.0.4
+* Fixed an issue where Chapa.getInstance returned a dynamic instance instead of the expected type. Now, the method correctly returns the appropriate instance type as intended.
