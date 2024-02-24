@@ -54,5 +54,13 @@ void main() {
       expect(() => chapa.verifyPayment(txRef: 'tx123'),
           throwsA(isA<AuthException>()));
     });
+    test(
+        'chapa getInstance should throw AuthException if privateKey is not configured',
+        () {
+      //  reset everything to test this test works
+      Chapa.resetConfiguration();
+
+      expect(() => Chapa.getInstance, throwsA(isA<AuthException>()));
+    });
   });
 }

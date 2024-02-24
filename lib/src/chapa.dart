@@ -71,6 +71,11 @@ class Chapa {
     _instance ??= _setup(privateKey);
     return _instance!;
   }
+  // Reset Chapa configuration
+  static void resetConfiguration() {
+    _privateKey = null;
+    _instance = null;
+  }
 
   /// Starts the payment process.
   ///
