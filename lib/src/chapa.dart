@@ -6,11 +6,9 @@ import 'Core/http_config.dart';
 import 'Core/type_definitions.dart';
 import 'Data/DataSource/RemoteDataSource/chapa_remote_data_source.dart';
 import 'Data/DataSource/RemoteDataSource/chapa_remote_data_source_impl.dart';
-
 import 'Data/Repository/chapa_repo_impl.dart';
 import 'Domain/Entities/authorization_entity.dart';
 import 'Domain/Entities/chapa_initializer_entity.dart';
-
 import 'Domain/Repository/chapa_repo.dart';
 import 'Domain/Usecase/intialize_usecase.dart';
 import 'Domain/Usecase/verify_usecase.dart';
@@ -97,7 +95,7 @@ class Chapa {
       String errorMsg,
     )? onInAppPaymentError,
     required String amount,
-   String currency,
+    String currency = 'ETB',
     String? txRef,
     String? email,
     String? firstName,
