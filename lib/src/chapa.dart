@@ -97,7 +97,7 @@ class Chapa {
       String errorMsg,
     )? onInAppPaymentError,
     required String amount,
-    required String currency,
+   String currency,
     String? txRef,
     String? email,
     String? firstName,
